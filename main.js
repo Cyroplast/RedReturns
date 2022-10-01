@@ -103,7 +103,7 @@ function component(width, height, color, x, y,type) {
             obA1.x = (Math.floor(obA1.x = Math.random() * 1151)-1)-1151;
             obA2.x = obA1.x + 1200;
             obA1.y = 60;
-            obspeed+=0.02;
+            obspeed+=0.05;
         }
     }
               
