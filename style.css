@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+    color: white;
+}
+#gametitle{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+#canvas1{
+background-color: darkslategrey;
+width: 100%;
+}
+#beginbtn{
+    text-align: center;
+}
+#help{
+    width: 100%;
+    background-color: white;
+}
