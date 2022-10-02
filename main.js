@@ -1,4 +1,9 @@
+function loadStuff(){
 document.getElementById("body").style.overflow = "hidden";
+if(localStorage.getItem("highscore") != null)
+{document.getElementById("highscore").innerHTML = `Your current high score is ${localStorage.getItem("highscore")}`;}
+}
+
 function startGame() {
  Red = new component(30, 20, "red", 10, 350, "player");
  obA1 = new component(1150, 25, "yellow", 575, 200, "obsticle");
@@ -6,9 +11,11 @@ function startGame() {
  document.getElementById("help").style.display = "none";
  myGameArea.start();
 }
+
 var obspeed = 1;
 var points = 1;
 var prev;
+
 var myGameArea = {
     canvas : document.getElementById("canvas1"),
     start : function() {
@@ -97,6 +104,13 @@ function component(width, height, color, x, y,type) {
             ctx.font = "15px Comic Sans MS";
             ctx.fillStyle = "white";
             ctx.fillText("Game Over: u crashed loser", 500, 220);
+            if(localStorage.getItem("highscore") ===  null){
+                localStorage.setItem("highscore", points);
+            } else if(localStorage.getItem("highscore") !=  null && points > localStorage.getItem("highscore"))
+            {
+                localStorage.setItem("highscore", points);
+                window.alert("New High Score!")
+            }
         }
         if(obA1.y >= 470){
             points+=1;

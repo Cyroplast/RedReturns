@@ -17,3 +17,7 @@ width: 100%;
     width: 100%;
     background-color: white;
 }
+#highscore{
+    text-align: center;
+    font-family: monospace;
+}
